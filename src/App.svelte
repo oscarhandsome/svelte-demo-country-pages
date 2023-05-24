@@ -13,7 +13,12 @@
 </script>
 
 <main>
-  <div class="title title__main">Test scss</div>
+  <p>
+    <span class="title title__main">Test scss1</span>
+    <span class="add add__me">
+    test2
+    </span>
+  </p>
   <section id="types-of-shipments" class="types-of-shipments">
     <br />
     <br />
