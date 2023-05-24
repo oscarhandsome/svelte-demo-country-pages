@@ -26,6 +26,10 @@
   <p class="read-the-docs">
     Click on the Vite and Svelte logos to learn more
   </p>
+
+  <p class="line">
+    <span class="line__block">abcs</span>
+  </p>
 </main>
 
 <style>
