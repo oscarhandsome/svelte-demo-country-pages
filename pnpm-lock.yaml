@@ -25,6 +25,9 @@ devDependencies:
   vite:
     specifier: ^4.3.2
     version: 4.3.2(sass@1.62.1)
+  vite-plugin-restart:
+    specifier: ^0.3.1
+    version: 0.3.1(vite@4.3.2)
 
 packages:
 
@@ -1315,6 +1318,15 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.3.0
+    dev: true
+
+  /vite-plugin-restart@0.3.1(vite@4.3.2):
+    resolution: {integrity: sha512-LVe74MLUwaOzXVUgRGiphYbAYNgdGF6mP5vxj5BKcKkdmzvuuw79qcNgn9kHKKaIlCCjmOUiY3qlJ8jBSBUCoA==}
+    peerDependencies:
+      vite: ^2.9.0 || ^3.0.0 || ^4.0.0
+    dependencies:
+      micromatch: 4.0.5
+      vite: 4.3.2(sass@1.62.1)
     dev: true
 
   /vite@4.3.2(sass@1.62.1):
