@@ -5,10 +5,12 @@
 </script>
 
 <main>
+  <div class="title title__main">Test scss</div>
   <section id="types-of-shipments" class="types-of-shipments">
     <br />
     <br />
     <div id="documents-only" class="subsection">
+      <img class="header-img" width="70" src="/documents-only.png" alt="Shipping Documents Only Image to Italy" />
       <h3>Documents Only</h3>
       <p>Shipping documents to Italy can be done duty and tax free providing they have no commercial value.</p>
       <p>Some typical examples of shipped documents include:</p>
@@ -689,4 +691,10 @@
   </section>
 </main>
 
-<style></style>
+<style lang="scss">
+  .title {
+    &__main {
+      color: lightcoral;
+    }
+  }
+</style>
