@@ -1,7 +1,15 @@
-<script>
+<script lang="ts">
   // import svelteLogo from './assets/svelte.svg'
   // import viteLogo from '/vite.svg'
   // import Counter from './lib/Counter.svelte'
+  import ItalyCountry from './lib/country/Italy.svelte'
+
+  interface CountryObject {
+    imageUrl: string,
+    name: string
+  }
+
+  let props: interface = { imageUrl: "/documents-only.png", name: "Italy" }
 </script>
 
 <main>
@@ -10,19 +18,7 @@
     <br />
     <br />
     <div id="documents-only" class="subsection">
-      <img class="header-img" width="70" src="/documents-only.png" alt="Shipping Documents Only Image to Italy" />
-      <h3>Documents Only</h3>
-      <p>Shipping documents to Italy can be done duty and tax free providing they have no commercial value.</p>
-      <p>Some typical examples of shipped documents include:</p>
-      <ul class="check-mark-list">
-        <li>Bids or proposals for work or contracts</li>
-        <li>Company newsletters with no commercial value used for internal communication</li>
-        <li>Diplomas</li>
-        <li>Driver's Licences</li>
-        <li>Examination Papers</li>
-        <li>Visa Applications</li>
-      </ul>
-      <p>Some items have limitations or criteria in order to be considered documents. They are shown in the table below.</p>
+      <ItalyCountry {...props} />
       <table class="general-table">
         <thead>
           <tr>

@@ -2,6 +2,27 @@
 
 This template should help get you started developing with Svelte in Vite.
 
+# Country Pages Conversion
+
+Your task is to convert the `italy.aspx` file to `italy.svelte` with the help of [SvelteKit](https://kit.svelte.dev/) project as fast as possible. Basically, we will convert these pages from old to new with little efforts without changing much code.
+
+## Must Tech stacks
+
+- SvelteKit + TypeScript
+- PNPM
+- Vite
+- SASS (Seems like the current page is using SASS)
+- optional 👉 POSTCSS (If you can convert sass quickly to postcss, you can use it otherwise don't spend too much time on it. Reason, we can move to Tailwind CSS if necessary in the future. You can use different POSTCSS plugins if necessary through `pnpm install`).
+
+## Installing
+
+```
+// install
+pnpm install
+// run
+pnpm run dev
+```
+
 ## Recommended IDE Setup
 
 [VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
@@ -42,6 +63,6 @@ If you have state that's important to retain within a component, consider creati
 ```js
 // store.js
 // An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+import { writable } from 'svelte/store';
+export default writable(0);
 ```
