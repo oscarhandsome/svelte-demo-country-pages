@@ -9,12 +9,102 @@
 // @import 'src/assets/sass/forms.scss';
 // @import 'src/assets/sass/tables.scss';
 // @import 'src/assets/sass/base.scss';
-
 // @import 'src/assets/sass/country/main.scss';
 
-.add {
-  display: flex;
-  &__me {
-    background-color: lightblue;
+// /***** CUSTOM STYLES ****/
+.info {
+  text-align: left;
+  color: #321547;
+
+  &__description {
+    line-height: 1.5;
+
+    &_bg {
+      padding: 10px 35px;
+      border-radius: 10px;
+      background-color: #f8f8f8;
+    }
   }
+}
+
+.flex {
+  display: flex;
+}
+
+.pr-30 {
+  padding-right: 30px;
+}
+.pr-40 {
+  padding-right: 40px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+main > section.info {
+  border-bottom: none;
+}
+
+main > section a {
+  text-decoration: none;
+}
+
+.image {
+  max-height: 300px;
+}
+.btn-info {
+  display: flex;
+  justify-items: center;
+  padding: 15px 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: ease-in-out 200ms all;
+}
+
+section.tracking-info > div .tracking-info-preview {
+  font-size: 0.8rem;
+}
+
+section.tracking-info .fedex {
+  width: 65px;
+  height: 65px;
+}
+
+.disclaimer {
+  padding: 35px 40px 20px;
+  border: darkred;
+  border: solid 3px darkred;
+  border-radius: 10px;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: darkred;
+  }
+}
+
+// section.tracking-info > div .timeline .item:nth-child(1):before {
+//   font-family: 'Font Awesome 5 Free';
+//   font-weight: 900;
+//   content: '\f00c'; // LONG search reason
+// }
+
+.no-color {
+  color: inherit;
+  border-color: #321547;
+}
+
+.general-table tr th {
+  background-color: #321547;
+}
+
+.general-table tr td {
+}
+
+.general-table tr:nth-child(odd) {
+  background-color: #fff;
+}
+.general-table tr:nth-child(even) {
+  background-color: #f1f1f4;
 }

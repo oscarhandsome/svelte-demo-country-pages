@@ -20,7 +20,11 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve('src')
+      '@': path.resolve('src'),
+      $lib: path.resolve('./src/lib')
+      // $components: path.resolve('./src/components')
+      // $stores: resolve('./src/stores')
+      // $actions: resolve('./src/actions')
     }
   }
   // css: {

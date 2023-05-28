@@ -1,24 +1,140 @@
 <script lang="ts">
+  import { Col, Row, Button, Modal } from 'sveltestrap';
+  import Fa from 'svelte-fa'
+  import { faFlag, faArrowRight, faTruckFast, faLocationDot, faTriangleExclamation, faCube } from '@fortawesome/free-solid-svg-icons'
   // import svelteLogo from './assets/svelte.svg'
   // import viteLogo from '/vite.svg'
   // import Counter from './lib/Counter.svelte'
-  import ItalyCountry from './lib/country/Italy.svelte'
 
-  interface CountryObject {
-    imageUrl: string,
-    name: string
-  }
+  import type { CountryObject } from '../types.ts'
+  import ItalyCountry from './lib/country/Italy.svelte'
+  import Title from '$lib/Title.svelte';
+  import TrackInfo from '$lib/TrackInfo.svelte';
 
   let props: interface = { imageUrl: "/documents-only.png", name: "Italy" }
+
+  let isOpen = false;
+  const toggle = () => (isOpen = !isOpen);
 </script>
+<Modal body {isOpen} {toggle} header="Hello World!">
+  <p>There's a song that we're singing. Come on</p>
+  <img
+    src="https://i.ytimg.com/vi/NUJIRujygvY/hqdefault.jpg"
+    alt="Come on Get Happy"
+    class="img-fluid"
+  />
+</Modal>
 
 <main>
-  <p>
-    <span class="title title__main">Test scss1</span>
-    <span class="add add__me">
-    test2
-    </span>
-  </p>
+  <!-- EXAMPLES -->
+  <Button color="primary" on:click={toggle}>Hello World!</Button>
+  <!-- <Row>
+    <Col>
+        <Button color="primary">Button</Button>
+        <Button color="primary" outline>Button</Button>
+        <Button color="danger">Button</Button>
+        <Button color="danger" outline>Button</Button>
+      </Col>
+    </Row> -->
+    <!-- <Fa icon={faCube} /> Flag -->
+  <section class="info">
+    <Row class="mb-30">
+      <Col sm="6">
+        <Title>Guide to Sending Parcels to Netherlands</Title>
+      </Col>
+    </Row>
+    <Row>
+      <Col sm="8">
+        <div class="info__description">
+          <p>Netherlands, known for its high fashion and inimitable style, refined cuisine, and fast motor cars is also one of Europe's major industrial and economic powers.</p>
+          <p>Netherlands love to shop, and they have readily taken to the internet to buy abroad to the tune of $15.8 billion USD in 2019. And it is expected to grow at 10% per year for the next several years.</p>
+        </div>
+      </Col>
+      <Col>
+        <div class="info__description info__description_bg">
+          <p>Infromation on this page was found from <a href="#abc">Netherlands Customs and European Union Taxation</a>, as well as from other Ducth govermant sources</p>
+        </div>
+      </Col>
+    </Row>
+  </section>
+
+  <section class="info">
+    <Row class="mb-30">
+      <Col sm="12">
+        <Title>
+          <Fa icon={faTruckFast} style="color: #e68f40; font-size: 2rem" /> Cheap Shipping Rates to the Netherlands
+        </Title>
+      </Col>
+    </Row>
+    <Row>
+      <Col>
+        <div class="info__description">
+          <p class="mb-30">Easily compare the best and cheapest shipping options to Italy through a variety of carriers using Secureship</p>
+          <p class="mb-30">Secureship provides safe and affordable shipping from Canada to Italy. Whether you are an everyday shopper or a business, you can easily save up to 50% on your international shipping costs by way of accessing our group buying power.</p>
+        </div>
+        <Button class="btn btn-info">Get an estimate <Fa icon={faArrowRight} style="margin-left: 10px" /> </Button>
+      </Col>
+
+      <Col>
+        <img class="image" src="https://test.secureship.ca/images/country-pages/find-the-cheapest-shipping-rates-to.jpg" alt="">
+      </Col>
+    </Row>
+  </section>
+
+   <section id="tracking-info" class="info tracking-info">
+    <Row>
+      <Col md="7">
+        <div class="pr-40">
+          <Title className="mb-30">
+            <Fa icon={faLocationDot} style="color: #e68f40; font-size: 2rem" /> Easy Tracking Information
+          </Title>
+          <p class="mb-30">Shipments through Secureship come with full, easy to read tracking information to Italy</p>
+          <div class="disclaimer">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h4 class="disclaimer__title"><Fa icon={faTriangleExclamation} /> Disclaimer!</h4>
+            <p>While we have made every effort to ensure that the information on this page is accurate, Customs laws and procedures change regularly so it is important to consult a licensed broker in Italy before shipping any goods.</p>
+          </div>
+        </div>
+      </Col>
+      <Col>
+        <TrackInfo />
+      </Col>
+    </Row>
+  </section>
+
+  <section class="info">
+    <Row>
+      <Col>
+        <Title className="mb-30">
+          <Fa icon={faCube} style="color: #e68f40; font-size: 2rem" /> Types of Shipments
+        </Title>
+      </Col>
+    </Row>
+    <Row>
+      <Col>
+        <p class=mb-30>Not all types of shipments are created equal. Shipping a television will require different paperwork, duties, and taxes than shipping an accounting statement, for example.</p>
+      
+        <div class="table-of-contents info__description">
+          <p>Here is a list of the most common types of shipments:</p>
+          <ul>
+              <li><a href="#documents-only" class="smoothScroll no-color" title="Shipping Documents to Italy">Documents Only</a></li>
+              <li><a href="#gifts" class="smoothScroll no-color" title="Sending Gifts to Italy">Gifts</a></li>
+              <li><a href="#personal-belongings" class="smoothScroll no-color" title="Moving to Italy and shipping your personal belongings">Personal Effects / Personal belongings</a></li>
+              <li><a href="#food-chocolate-candies" class="smoothScroll no-color" title="Sending Parcels containing Food, Chocolate, or Candies">Food, Chocolate, Candies</a></li>
+              <li><a href="#commercial-samples" class="smoothScroll no-color" title="Shipping Commercial Samples or Product Samples to Italy">Samples</a></li>
+              <li><a href="#marketing-material" class="smoothScroll no-color" title="Courier Advertising or Marketing Material to Italy">Advertising material</a></li>
+              <li><a href="#warranty-repair" class="smoothScroll no-color" title="Warranty repair or simply repairing equipment for goods originating or sold to Italy">Repaired Equipment</a></li>
+              <li><a href="#temporary-imports" class="smoothScroll no-color" title="Shipping goods of temporary nature to Italy such as TradeShow boots or Exhibit material">Temporary imports (i.e. trade shows, exhibits, etc)</a></li>
+              <li><a href="#permanent" class="smoothScroll no-color" title="Shipping products of permanent nature such as items sold from your store">Permanent or Sold Goods</a></li>
+          </ul>
+          <p>You can also skip ahead to the table containing the list of <a href="#required-docs" title="Commonly required documents for shipments to Italy">Commonly Required Documents</a>.</p>
+      </div>
+      </Col>
+    </Row>
+    <div>
+      
+  </section>
+
   <section id="types-of-shipments" class="types-of-shipments">
     <br />
     <br />
@@ -693,9 +809,9 @@
 </main>
 
 <style lang="scss">
-  .title {
-    &__main {
-      color: lightcoral;
-    }
-  }
+  // .title {
+  //   &__main {
+  //     color: lightcoral;
+  //   }
+  // }
 </style>
